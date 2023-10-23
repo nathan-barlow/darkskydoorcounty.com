@@ -1,0 +1,1462 @@
+/*
+Theme Name: Dark Sky Door County
+Theme URI: https://www.darkskydoorcounty.nathan-barlow.com
+Description: Dark Sky Door County WordPress Theme
+Author: Nathan Barlow
+Author URI: https://www.nathan-barlow.com
+Version: 1.0
+
+Tags:
+
+License: License URI:
+
+General comments (optional).
+*/
+
+/* Import normalize.css */
+@use 'normalize';
+
+/* || Required WordPress code */
+.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+   div.aligncenter {
+   display: block;
+   margin: 5px auto 5px auto;
+}
+
+.alignright {
+   float:right;
+   margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+   float: left;
+   margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+   float: right;
+   margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+   float: left;
+   margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.wp-caption {
+   background: #fff;
+   border: 1px solid #f0f0f0;
+   max-width: 96%; /* Image does not overflow the content area */
+   padding: 5px 3px 10px;
+   text-align: center;
+}
+
+.wp-caption.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+   margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+   margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+   border: 0 none;
+   height: auto;
+   margin: 0;
+   max-width: 98.5%;
+   padding: 0;
+   width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   margin: 0;
+   padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+   border: 0;
+   clip: rect(1px, 1px, 1px, 1px);
+   clip-path: inset(50%);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute !important;
+   width: 1px;
+   word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+   background-color: #eee;
+   clip: auto !important;
+   clip-path: none;
+   color: #444;
+   display: block;
+   font-size: 1em;
+   height: auto;
+   left: 5px;
+   line-height: normal;
+   padding: 15px 23px 14px;
+   text-decoration: none;
+   top: 5px;
+   width: auto;
+   z-index: 100000;
+   /* Above WP toolbar. */
+}
+
+.has-medium-font-size {
+   letter-spacing: normal;
+}
+
+:root {
+   --font-system: "elza-narrow", system-ui, -apple-system, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+   --color-main: #007C9E;
+   --color-dark: rgba(0, 0, 0, 0.69);
+   --color-light: #eaf3f5;
+   --color-background: white;
+   --color-heading: var(--color-main);
+   --color-subheading: black;
+   --color-text: var(--color-dark);
+   --color-button: var(--color-main);
+   --color-button-text: white;
+   --grid-columns-2: repeat(2, 1fr);
+   --grid-columns-3: repeat(3, 1fr);
+   --grid-columns-4: repeat(4, 1fr);
+   --grid-gap: 20px;
+}
+
+.darkblue {
+   --color-background: var(--color-main);
+   --color-heading: var(--color-light);
+   --color-subheading: white;
+   --color-text: var(--color-light);
+   --color-button: white;
+   --color-button-text: var(--color-main);
+}
+
+.lightblue {
+   --color-background: var(--color-light);
+   --color-heading: var(--color-main);
+   --color-subheading: black;
+   --color-text: var(--color-dark);
+}
+
+.dark {
+   --color-background: var(--color-dark);
+   --color-heading: var(--color-light);
+   --color-subheading: white;
+   --color-text: white;
+}
+
+html {
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+::selection {
+   background-color: var(--color-main);
+   color: white;
+}
+
+body,
+section,
+footer {
+   margin: 0;
+   font-family: var(--font-system);
+   color: var(--color-text);
+   background-color: var(--color-background);
+}
+
+section,
+aside {
+   padding: 50px 10px;
+   clear: both;
+}
+
+section.nopadding {
+   padding: 0px;
+   margin: 0px;
+}
+
+.center {
+   text-align: center;
+}
+
+.left {
+   text-align: left;
+}
+
+main {
+   min-height: 60vh;
+}
+
+.wrapper {
+   margin: auto;
+   width: min(1080px, 94%);
+}
+
+.wrapper.blog-post {
+   max-width: 700px;
+}
+
+.grid {
+   display: grid;
+   grid-gap: var(--grid-gap);
+}
+
+.grid-2 {
+   grid-template-columns: 1fr;
+}
+
+.grid-3 {
+   grid-template-columns: 1fr;
+}
+
+.grid-4 {
+   grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+   font-size: 2em;
+   color: var(--color-subheading);
+   margin: .5em 0px 0px 0px;
+}
+
+h2 {
+   font-size: 3em;
+   font-family: var(--font-system);
+   letter-spacing: -2px;
+   font-weight: bold;
+   color: var(--color-heading);
+   line-height: 1;
+   margin: 16px 0px;
+}
+
+h3 {
+   font-size: 1.5em;
+   font-weight: 900;
+   color: var(--color-subheading);
+   margin: 5px auto;
+}
+
+h4 {
+   font-size: 1.2em;
+   font-weight: 900;
+   text-transform: uppercase;
+   margin: auto;
+}
+
+p {
+   color: var(--color-text);
+}
+
+p,
+section li {
+   line-height: 1.5;
+}
+
+a {
+   text-decoration: none;
+   padding-bottom: 1px;
+   color: var(--color-button);
+   border-bottom: 1px dotted var(--color-button);
+}
+
+a.button,
+p.button a,
+.other-posts a,
+.password-submit,
+.wp-block-button__link {
+   display: inline-block;
+   border-radius: 12px;
+   background-color: var(--color-button);
+   color: var(--color-button-text);
+   border-bottom: none;
+   padding: 10px 16px;
+   margin: 16px 0px;
+   transition: .3s;
+}
+
+a.button::after,
+p.button a::after,
+.password-submit::after,
+.wp-block-button__link::after {
+   font-family: 'Bootstrap-icons';
+   content: ' \F138';
+   display: inline-block;
+   margin-left: 5px;
+   transform: translateY(3px);
+   transition: .3s;
+}
+
+a.button:hover,
+p.button a:hover,
+.other-posts a:hover,
+.password-submit:hover,
+.wp-block-button__link:hover {
+   opacity: .9;
+}
+
+a.button:hover::after,
+p.button a:hover::after,
+.password-submit:hover::after,
+.wp-block-button__link:hover::after {
+   transform: translate(5px, 3px);
+}
+
+a.button:active,
+p.button a:active,
+.other-posts a:active,
+.password-submit:active,
+.wp-block-button__link:active {
+   transform: scale(1.05);
+}
+
+.hide {
+   display: none;
+}
+
+li {
+   margin-bottom: .5em;
+}
+
+
+
+/* || HEADER + NAV */
+header {
+   z-index: 999;
+   height: 80px;
+   width: 100%;
+   padding: 10px;
+   background: var(--color-main);
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+
+header img {
+   width: 40px;
+   height: 40px;
+}
+
+.home header,
+.error404 header {
+   position: absolute;
+   top: 0;
+   background: linear-gradient(180deg, black 0%,
+      rgba(255,255,255,0) 100%);
+}
+
+.home.logged-in header,
+.error404.logged-in header {
+   top: 46px;
+}
+
+header a {
+   display: flex;
+   gap: 10px;
+   border-bottom: none;
+   color: white;
+}
+
+header .header-link h3 {
+   margin: 0;
+   font-size: 1.2em;
+   display: inline-block;
+   width: 160px;
+   align-self: center;
+   color: white;
+}
+
+
+
+/* hamburger menu */
+.nav-main-menu-toggle {
+   display: none;
+}
+
+.nav-main-menu-toggle-icon {
+   position: absolute;
+   z-index: 9999;
+   width: 50px;
+   height: 50px;
+   top: 16px;
+   right: 10px;
+   cursor: pointer;
+}
+
+.nav-main-menu-toggle-icon span {
+   width: 50%;
+   top: 50%;
+   right: 10px;
+   transform: translateY(-50%);
+}
+
+.nav-main-menu-toggle-icon span::before,
+.nav-main-menu-toggle-icon span,
+.nav-main-menu-toggle-icon span::after {
+   background: white;
+   height: 2px;
+   position: absolute;
+   content: '';
+   transition: all .25s ease-out;
+   border-radius: 5px;
+}
+
+.nav-main-menu-toggle-icon span::before {
+   width: 100%;
+   top: -7px;
+}
+
+.nav-main-menu-toggle-icon span::after {
+   width: 100%;
+   top: 7px;
+}
+
+.nav-main-menu-toggle:checked~.nav-main-menu-toggle-icon span {
+   background: transparent;
+   transform: rotate(180deg) scale(0.8);
+}
+
+.nav-main-menu-toggle:checked~.nav-main-menu-toggle-icon span::before,
+.nav-main-menu-toggle:checked~.nav-main-menu-toggle-icon span::after {
+   top: 0;
+}
+
+.nav-main-menu-toggle:checked~.nav-main-menu-toggle-icon span::before {
+   transform: rotate(45deg);
+}
+
+.nav-main-menu-toggle:checked~.nav-main-menu-toggle-icon span::after {
+   transform: rotate(-45deg);
+}
+
+header nav {
+   position: fixed;
+   background-color: var(--color-main);
+   top: 0;
+   right: 0;
+   opacity: 0;
+   transform: translateX(100vw);
+   transition: .5s;
+   width: 100%;
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1000;
+}
+
+.nav-main-drawer {
+   width: 100%;
+}
+
+header nav ul {
+   display: flex;
+   gap: 5px;
+   flex-direction: column;
+   justify-content: center;
+   list-style-type: none;
+   padding: 0px;
+   width: 100%;
+}
+
+header .nav-main-menu-toggle:checked~nav {
+   opacity: 1;
+   transform: translateY(0px);
+}
+
+header nav a {
+   margin: 5px 10px;
+   padding: 10px 16px;
+   transition: .3s;
+   position: relative;
+}
+
+header .menu-item {
+   transition: .3s;
+}
+
+header .menu-item-has-children > a::after {
+   font-family: "Bootstrap-icons";
+   content: " \F282";
+}
+
+header .sub-menu {
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+   border-radius: 5px;
+   transition: .3s;
+   transform-origin: top;
+   padding-left: 10px;
+   z-index: 100;
+   width: inherit;
+}
+
+/* style call to action in header */
+header .menu > .menu-item:last-of-type a {
+   background-color: var(--color-light);
+   color: var(--color-main);
+   border-radius: 12px;
+   padding: 10px 16px;
+}
+
+header .menu > .menu-item:last-of-type a:hover {
+   transform: scale(1.05);
+}
+
+header .menu > .menu-item:last-of-type a:active {
+   transform: scale(1);
+}
+
+
+
+/* || FOOTER */
+footer {
+   padding: 20px;
+}
+
+footer a {
+   border-bottom: none;
+   color: var(--color-text);
+   display: block;
+   margin-top: 1em;
+}
+
+footer .sub-menu a {
+   font-size: 1em;
+   margin-left: 10px;
+}
+
+footer .sub-menu {
+   padding-left: 20px;
+   list-style-type: "\2014 ";
+}
+
+footer ul {
+   list-style-type: none;
+   padding-left: 0px;
+}
+
+footer i.bi {
+   margin-right: 6px;
+}
+
+.footer-main img {
+   height: 200px;
+   padding: 20px 0px;
+}
+
+
+
+/* || HOME SECTION1 (IMAGE) */
+.home .section1,
+#night-sky {
+   z-index: 1;
+   background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+      url("images/newport-stars.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   min-height: 100vh;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.home .section1 h2 {
+   text-shadow: 0px 0px 10px black;
+}
+
+.home .section1 .button {
+   margin: 10px;
+}
+
+
+
+/* || HOME SECTION2 (THE PROPERTY) */
+.grid-amenities {
+   margin: 50px 0px;
+}
+
+.grid-amenities i {
+   font-size: 3em;
+   margin: 30px;
+}
+
+.grid-amenities h3 {
+   font-size: 1.2em;
+}
+
+#house-rules i {
+   margin-right: 5px;
+   display: block;
+   font-size: 3em;
+}
+
+#house-rules ul {
+   list-style-type: none;
+   padding: 0px;
+   display: grid;
+   grid-template-columns: var(--grid-columns-3);
+   gap: 10px;
+}
+
+
+
+/* || HOME SECTION3 (MAP) */
+.map iframe,
+.map, 
+#map {
+   min-height: 90vh;
+   text-align: center;
+}
+
+#map {
+   background-image: url('images/map.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+#map img {
+   width: 100%;
+   max-width: 300px;
+   height: auto;
+   border-radius: 4px;
+   margin-bottom: 4px;
+}
+
+#map a {
+   border-bottom: none;
+}
+
+#map a h4 {
+   margin: 0px 20px;
+}
+
+#map a h4::after {
+   font-family: 'Bootstrap-icons';
+   font-size: .9em;
+   content: '\F138';
+   display: inline-block;
+   margin-left: -16px;
+   transform: translateY(1px);
+   opacity: 0;
+   transition: .3s;
+}
+
+#map a:hover h4::after {
+   margin-left: -16px;
+   opacity: 1;
+   transform: translateY(1px) translateX(20px);
+}
+
+
+
+/* || HOME SECTION4 (BEAUTIFUL DOOR COUNTY) */
+.section4 .textbox {
+   margin: 0px 0px;
+}
+
+
+
+/* || HOME SECTION5 (NEARBY ATTRACTIONS) */
+.cards {
+   list-style-type: none;
+   padding: 0px;
+   margin: 50px 0px;
+}
+
+.card {
+   overflow: hidden;
+   border-radius: 30px;
+   background-color: white;
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+   text-align: left;
+   transition: .4s;
+}
+
+.card-link {
+   border-bottom: none;
+   color: var(--color-text);
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.card-figure {
+   margin-bottom: -3px;
+   overflow: hidden;
+}
+
+.card-figure img {
+   width: 100%;
+   height: auto;
+   transition: .4s;
+   border: 0px;
+}
+
+.card-text {
+   padding: 20px;
+   z-index: 20;
+}
+
+.card-meta {
+   display: flex;
+   margin-top: auto;
+   padding: 0px 20px 20px 20px;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.card-meta > p {
+   display: inline-block;
+   margin: auto auto auto 10px;
+}
+
+.card-meta > i.bi-car-front-fill,
+.card-meta > i.bi-calendar-event {
+   font-size: 1.5em;
+}
+
+.card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-figure img {
+   transform: scale(1.1);
+}
+
+.card:active {
+   transform: translateY(-10px) scale(1.05);
+}
+
+.card-text p {
+   margin: 0px;
+}
+
+div#infinite-handle {
+   grid-column: 1 / 4;
+   margin-top: 20px;
+}
+
+div#infinite-handle span {
+   border-radius: 12px;
+   padding: 16px 10px;
+   background: var(--color-button);
+}
+
+div#infinite-handle span button {
+   width: 200px;
+   background: var(--color-button);
+   color: var(--color-button-text);
+}
+
+/* || HOME SECTION6 (REVIEWS) */
+.stars::before {
+   font-family: 'Bootstrap-icons';
+   content: '\F588  \F588  \F588  \F588  \F588';
+   color: #ffd600;
+   font-size: 1.5em;
+}
+
+.stars-1::before {
+   content: '\F586  \F588  \F588  \F588  \F588';
+}
+.stars-2::before {
+   content: '\F586  \F586  \F588  \F588  \F588';
+}
+.stars-3::before {
+   content: '\F586  \F586  \F586  \F588  \F588';
+}
+.stars-4::before {
+   content: '\F586  \F586  \F586  \F586  \F588';
+}
+.stars-5::before {
+   content: '\F586  \F586  \F586  \F586  \F586';
+}
+
+.splide {
+   padding: 30px;
+}
+
+.splide__arrow--prev {
+   left: 5px;
+}
+.splide__arrow--next {
+   right: 5px;
+}
+
+.reviews-slide {
+   padding: var(--grid-gap);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   h3 {
+      margin: 5px 0px;
+   }
+}
+
+/* |||| PAGE - THE PROPERTY */
+/* || OVERVIEW */
+#property-overview .wp-block-jetpack-slideshow {
+   width: 100%;
+}
+
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_pagination.swiper-pagination-custom {
+   justify-content: center !important;
+}
+
+/* || AMENITIES */
+.page .amenities > div {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--grid-gap);
+}
+
+.page .amenity {
+   background: var(--color-light);
+   color: var(--color-dark);
+   border-radius: 30px;
+   padding: 30px;
+}
+
+.page .amenity h3::before {
+   font-family: "Font Awesome 6 Free";
+   display: block;
+   font-size: 3em;
+   color: var(--color-background);
+   margin-bottom: 20px;
+}
+/* icon above kitchen */
+.page .amenity:nth-of-type(1) h3::before {content: "\e51a";}
+/* icon above bedrooms */
+.page .amenity:nth-of-type(2) h3::before {content: "\f236";}
+/* icon above bathroom/laundry */
+.page .amenity:nth-of-type(3) h3::before {content: "\e06e";}
+/* icon above entertainment */
+.page .amenity:nth-of-type(4) h3::before {content: "\f26c";}
+/* icon above outdoor */
+.page .amenity:nth-of-type(5) h3::before {content: "\f6c4";}
+/* icon above other amenities */
+.page .amenity:nth-of-type(6) h3::before {content: "\f005";}
+
+.page .amenity h3 {
+   color: black;
+   display: inline-block;
+}
+
+.page .amenity ul {
+   margin-bottom: 0px;
+   padding: 0px;
+   list-style-type: none;
+   line-height: 1.5;
+}
+
+/* || LOCATION */
+#location {
+   display: grid;
+   grid-template-columns: 1fr;
+}
+
+#location iframe {
+   min-height: 50vh;
+}
+
+
+
+/* ||| DARK SKY GUESTS */
+.dark-sky-guests h1 {
+   margin-top: 50px;
+}
+
+.post-password-form::before {
+   content: "This page provides information for guests who have booked a stay at Dark Sky Lakehouse. For my safety and the safety of all guests, this page is password protected. Please enter the password that was provided to you after booking. If you did not receive a password, my contact information is available at the bottom of the website.";
+}
+
+.post-password-form {
+   display: flex;
+   flex-direction: column;
+   background-color: white;
+   align-items: center;
+   border-radius: 30px;
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+   padding: 50px;
+   text-align: center;
+   width: 96%;
+   margin: auto;
+   margin-top: var(--grid-gap);
+   line-height: 1.5;
+}
+
+.post-password-form p:first-of-type {
+   display: none;
+}
+
+.post-password-form p:last-of-type {
+   display: flex;
+   flex-direction: column;
+}
+
+.post-password-form input {
+   padding: 10px;
+   border-radius: 12px;
+   outline: none;
+   margin-top: 20px;
+   border: none;
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-password-form input[type="submit"] {
+   cursor: pointer;
+   padding: 10px;
+   color: var(--color-button-text);
+   background-color: var(--color-button);
+}
+
+.aside-guests ul {
+   margin-top: .5em;
+}
+
+.quick-info li {
+   font-family: 'Bootstrap-icons', var(--font-system);
+   padding-left: 5px;
+}
+
+.quick-info .check-in {
+   list-style-type: '\F1E2';
+}
+
+.quick-info .check-out {
+   list-style-type: '\F1F5';
+}
+
+.quick-info .address {
+   list-style-type: '\F3E8';
+}
+
+.quick-info .email {
+   list-style-type: '\F32F';
+}
+
+.aside-guests {
+   background-color: white;
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+   text-align: left;
+   border-radius: 30px;
+   margin: 10px;
+   padding: 20px;
+}
+
+.dark-sky-guests h3 {
+   margin-top: 1em;
+}
+
+
+
+/* |||| PAGE - MEET THE HOST */
+.about-image img {
+   width: 100%;
+   height: auto;
+}
+
+
+
+/* |||| CATEGORY PAGES */
+#nav-posts {
+   padding: 1px;
+   background-color: var(--color-background);
+   z-index: 50;
+}
+
+ul.categories {
+   padding: 0px;
+}
+
+ul.categories li,
+ul.categories ul {
+   display: inline-block;
+   padding: 0px;
+   line-height: 3.6;
+}
+
+ul.categories a {
+   border-bottom: none;
+   list-style-type: none;
+   padding-left: 0px;
+   padding: 10px;
+   margin: 5px;
+   border-radius: 12px;
+   transition: .3s;
+   border: 2px solid var(--color-text);
+   color: var(--color-text);
+   background: var(--color-background);
+   font-size: 1em !important;
+}
+
+ul.categories .current-cat > a,
+ul.categories a:hover {
+   color: white;
+   background: var(--color-text);
+   border: 2px solid rgba(0, 0, 0, 0);
+}
+
+
+
+/* |||| POSTS */
+.post-figure img {
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+}
+
+.post-figure figcaption {
+   margin-top: 5px;
+   text-align: center;
+}
+
+.post-content h3 {
+   margin-top: 10px;
+}
+
+.post-meta {
+   display: flex;
+   margin: 10px 0px;
+   gap: 10px;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.post-meta > i:first-of-type {
+   font-size: 1.3em;
+}
+
+.post-meta a {
+   border-bottom: none;
+   color: var(--color-text);
+}
+
+.other-posts a {
+   margin: 10px;
+}
+
+.tags {
+   margin: 20px 0px;
+}
+
+.tags a {
+   border-radius: 6px;
+   padding: 5px;
+   background-color: var(--color-text);
+   color: var(--color-button-text);
+   border-bottom: none;
+   font-size: .8em;
+}
+
+.pagination span,
+.pagination a {
+   margin: 0px 8px;
+   border-bottom: none;
+}
+
+.post-map {
+   padding: 10px;
+}
+
+.post-map a {
+   margin: 5px;
+}
+
+.blog-post img {
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+}
+
+
+
+/* || SCREENS BIGGER THAN 782PX */
+@media only screen and (min-width: 782px) {
+   .home.logged-in header,
+   .error404.logged-in header {
+      top: 32px;
+   }
+
+   /* || AMENITIES */
+   .page .amenities > div {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+}
+
+
+
+/* || SCREENS BIGGER THAN 980PX */
+@media only screen and (min-width: 980px) {
+   .home.logged-in header,
+   .error404.logged-in header {
+      top: 32px;
+   }
+
+   section,
+   aside {
+      padding: 50px;
+   }
+
+   .grid-2 {
+      grid-template-columns: 1fr 1fr;
+   }
+   
+   .grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   
+   .grid-4 {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+   
+   h2 {
+      font-size: 4em;
+   }
+
+   /* || HEADER + NAV */
+   header {
+      padding: 20px;
+      height: 100px;
+   }
+
+   .home header,
+   .error404 header {
+      height: auto;
+   }
+
+   /* style call to action in header */
+   .home header .menu > .menu-item:last-of-type a,
+   .error404 header .menu > .menu-item:last-of-type a {
+      background-color: var(--color-main);
+      color: white;
+   }
+
+   header img {
+      width: 60px;
+      height: 60px;
+   }
+
+   header a {
+      gap: 10px;
+   }
+
+   header .header-link h3 {
+      font-size: 1.3em;
+   }
+
+   .nav-main-menu-toggle-icon {
+      display: none;
+   }
+   
+   header nav ul {
+      display: flex;
+      gap: 20px;
+      list-style-type: none;
+   }
+
+   header nav {
+      margin-left: auto;
+      position: relative;
+      background: none;
+      opacity: 1;
+      transform: translateX(0px);
+      transition: .5s;
+      width: auto;
+      min-height: 100%;
+      display: inline-block;
+      box-shadow: none;
+   }
+   
+   header nav ul {
+      flex-direction: row;
+      align-items: flex-start;
+   }
+   
+   header nav ul li a {
+      padding: 10px 0px;
+   }
+
+   header .menu > .menu-item:not(:last-of-type, .menu-item-has-children) a::before,
+   header .sub-menu > .menu-item a::before {
+      transition: .3s;
+      height: 1px;
+      content: "";
+      position: absolute;
+      background-color: white;
+      width: 0%;
+      bottom: 0px;
+   }
+
+   header .menu .menu-item.current-menu-item > a::before,
+   header .menu > .menu-item:not(.menu-item-has-children):hover > a::before,
+   header .sub-menu > .menu-item:hover a::before {
+      width: 100%;
+   }
+   
+   header .sub-menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--color-dark);
+      border-radius: 5px;
+      transition: .3s;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      padding: 5px 10px;
+      z-index: 100;
+   }
+   
+   header .menu-item-has-children:hover .sub-menu {
+      opacity: 1;
+      transform: scaleY(1);
+   }
+
+
+
+   /* || FOOTER */
+   .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+
+
+   /* || HOME SECTION1 (IMAGE) */
+   .home .section1 {
+      padding: 100px;
+      background-attachment: fixed;
+   }
+
+
+
+   /* || HOME SECTION2 (THE PROPERTY) */
+   .grid-amenities {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin: 50px;
+   }
+
+
+
+   /* || HOME SECTION4 (BEAUTIFUL DOOR COUNTY) */
+   .section4 {
+      background-image: url('images/door-county-outline.svg');
+      background-repeat: no-repeat;
+      background-position: bottom 0px right 20px;
+      background-size: auto 90%;
+   }
+
+   .section4 .textbox {
+      margin: 0px 300px 0px 60px;
+   }
+
+
+
+   /* || HOME SECTION5 (NEARBY ATTRACTIONS) */
+   .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   .reviews-slide {
+      padding: 0px 50px;
+   }
+
+
+   /* |||| PAGE - THE PROPERTY */
+   /* || OVERVIEW */
+   #property-overview .wp-block-jetpack-slideshow {
+      width: 50%;
+      float: right;
+      margin-left: 20px;
+   }
+
+   /* || THE HOUSE */
+   .the-house p {
+      margin-right: 100px;
+      margin-left: 100px;
+   }
+
+   /* || AMENITIES */
+   .page .amenities > div {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+   }
+
+   /* || LOCATION */
+   #location {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+   }
+
+   /* || DARK SKY GUESTS */
+   .aside-guests {
+      float: right;
+      margin-left: 30px
+   }
+
+
+
+   /* |||| PAGE - MEET THE HOST */
+   .about-image {
+      padding-left: 50px;
+   }
+
+
+
+   /* |||| POSTS */
+   .post > * {
+      padding: 10px;
+   }
+
+
+
+   .sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%
+   }
+
+   .sticky + ol.cards,
+   .sticky + section.section-post {
+      padding-top: 120px;
+   }
+
+   .post-password-form {
+      width: 50%;
+   }
+}
+
+
+
+/* || IOS DEVICES */
+@supports (-webkit-touch-callout: none) {
+   .home .section1 {
+      background-attachment: scroll;
+   }
+}
+
+
+
+/* NO TRANSITION FOR REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+   *,
+   *::after,
+   *::before {
+      transition: none !important;
+   }
+}
+
+
+
+/* DOCS STYLES */
+.docs {
+   line-height: 1.5;
+}
+
+.docs section {
+   background: var(--color-light);
+   margin: 20px 0px;
+   overflow-wrap: break-word;
+}
+
+.docs.wrapper {
+   width: min(1200px, 94%)
+}
+
+.docs ~ footer {
+   clear: both;
+}
+
+.docs h1 {
+   font-size: 2em;
+}
+
+.docs h2 {
+   font-family: var(--font-system);
+   font-size: 1.5em;
+   font-weight: bold;
+   letter-spacing: 0px;
+}
+
+.docs h3 {
+   font-size: 1.2em;
+}
+
+.docs h1 a,
+.docs h2 a,
+.docs h3 a {
+   border-bottom: none;
+}
+
+.docs #toc a,
+.docs li a,
+.docs p a:not(.button) {
+   border-bottom: none;
+   padding-bottom: 2px;
+   color: var(--color-main);
+   border-bottom: 1px dotted var(--color-main);
+   position: relative;
+}
+
+.docs #toc a:hover,
+.docs li a:hover,
+.docs p a:not(.button):hover {
+   border-bottom-style: solid;
+}
+
+.docs #contact {
+   list-style-type: none;
+   padding-left: 20px;
+   color: var(--color-main);
+}
+
+@media only screen and (min-width: 980px) {
+   .docs aside {
+      float: left;
+      width: 30%;
+   }
+   
+   .docs main {
+      float: right;
+      width: 70%;
+   }
+}

@@ -1,0 +1,9 @@
+# All config files
+*.config
+
+# Other files
+template-parts/map-js-archive.php
+template-parts/map-js-post.php
+template-parts/map-js.php
+template-parts/map.php
+page-docs.php
